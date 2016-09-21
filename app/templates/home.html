@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../static/bootstrap%20files/bootstrap.min.css">
+    <script src="../static/bootstrap%20files/jquery.min.js"></script>
+    <script src="../static/bootstrap%20files/bootstrap.min.js"></script>
+    <link rel= "stylesheet" type="text/css" href= "../static/stylesheet.css">
+    <script src="../static/script.js"></script>
+
+    <title>Gumoku</title>
+
+</head>
+
+<body>
+<h1 class="container" style="text-align: center"><b>Gumoku Online</b></h1>
+<div id="layout">
+    <table id="gomoku">
+        {% for x in range(0, 14) %}
+        <tr>
+        {% for y in range(0, 14) %}
+            <td id="{{ y }}-{{ x }}" onclick="play({{ y }}, {{ x }})";>&nbsp;</td>
+        {% endfor %}
+        </tr>
+        {% endfor %}
+    </table></div>
+
+</body>
+</html>
