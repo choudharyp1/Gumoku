@@ -2,9 +2,16 @@ html,body{
     background: url("./paper-backgrounds.jpg");
 }
 
+body{
+    position:fixed;
+    overflow-x:scroll;
+}
+
 h1{
-    font-family: "Droid Serif", "DejaVu Serif", "STIX", serif;
+    position: relative;
+    font-family: Papyrus;
     color: black;
+    left: 400px;
 }
 
 .bluebg{
@@ -24,12 +31,15 @@ h1{
 }
 
 #layout{
+    position: relative;
     width: 600px;
     height: 600px;
     text-align: center;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 80px;
+    margin-top: 50px;
+    left: 400px;
+    background-color: #FFF8DC;
 }
 #gomoku{
     text-align: center;
@@ -46,4 +56,61 @@ h1{
 
 #gomoku tr{
 	border: 2px solid black;
+}
+
+#variation{
+        text-align: center;
+        margin-top: 50px;
+        width: 40%;
+        height: 9%;
+        background-color: #ce8483;
+        font-family: Papyrus;
+        font-size: 200%;
+}
+
+button:focus{
+    outline:0;
+}
+
+button{
+    padding: 3px 10px 4px 10px;
+}
+
+button:active{
+     padding: 0px 10px 3px 0px;
+}
+
+.buttons{
+    position: relative;
+    width: 500px;
+    top: -400px;
+    left: 150px;
+    display: inline-block;
+}
+
+.buttons button{
+        position: relative;
+        text-align: center;
+        margin-top: 50px;
+        width: 40%;
+        height: 1%;
+        background-color: #ce8483;
+        font-family: Papyrus;
+        font-size: 200%;
+}
+#stop{
+    margin-left: 10px;
+}
+#start{
+    margin-right: 10px;
+}
+
+.status{
+    position: relative;
+    left: 1550px;
+    top: -460px;
+}
+
+.clickables{
+    pointer-events: none;
 }
