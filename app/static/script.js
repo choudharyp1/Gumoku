@@ -4,7 +4,7 @@
 
 $(document).ready(function () {
     $('#gomoku td').click(function () {
-        $(this).addClass('bluebg');
+        $(this).addClass('addimage');
     })
 })
 

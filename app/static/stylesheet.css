@@ -23,7 +23,7 @@ h1{
 }
 
 .yellowbg{
-    background: yellow
+    background: yellow;
 }
 
 .redbg{
@@ -39,7 +39,6 @@ h1{
     margin-right: auto;
     margin-top: 50px;
     left: 400px;
-    background-color: #FFF8DC;
 }
 #gomoku{
     text-align: center;
@@ -113,4 +112,12 @@ button:active{
 
 .clickables{
     pointer-events: none;
+}
+
+.addimage{
+    text-color: white;
+    background-size: 85% 85%;
+    background-image: url("./black.png");
+    background-repeat: no-repeat;
+    background-position: center;
 }

@@ -16,10 +16,10 @@
 <h1 class="container" style="text-align: center"><b>Gumoku Online</b></h1>
 <div id="layout">
     <table id="gomoku">
-        {% for x in range(0, 14) %}
+        {% for x in range(0, 15) %}
         <tr>
-        {% for y in range(0, 14) %}
-            <td id="{{ y }}-{{ x }}" onclick="play({{ y }}, {{ x }})";>&nbsp;</td>
+        {% for y in range(0, 15) %}
+            <td id="{{ y }}-{{ x }}" onclick="play({{ y }}, {{ x }})";>1</td>
         {% endfor %}
         </tr>
         {% endfor %}
