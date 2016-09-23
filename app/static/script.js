@@ -3,24 +3,32 @@
  */
 
 $(document).ready(function () {
+
+	$('#stop').hide();
+	$('#devariation').hide();
+
     $('#gomoku td').click(function () {
-        $(this).addClass('addimage');
+    	if ($(this).attr('id') != "lol") {
+    		$(this).addClass('botimage')
+	        console.log($(this).attr('id'))
+	        window.location.href='/play/' + $(this).attr('id');
+    	}
+        return false;
     })
+	$('#start').click(function () {
+		$(this).hide();
+		$('#stop').show();
+	});
+	$('#stop').click(function () {
+		$(this).hide();
+		$('#start').show();
+	});
+	$('#variation').click(function () {
+		$(this).hide();
+		$('devariation').show();
+	});
+	$('#devariation').click(function () {
+		$(this).hide();
+		$('#variation').show();
+	});
 })
-
-
-function countDown(secs,elem) {
-	var element = document.getElementById(elem);
-	element.innerHTML = '<h4 style="font-family: serif; font-size: 20px;">You have <b>'+secs+'</b> seconds to play your move</h4>';
-
-
-    if (secs <= 0){
-        clearTimeout(timer);
-        alert("User has timed out. Start a New Game.");
-        return;
-    }
-    else {
-        secs--;
-    }
-	var timer = setTimeout('countDown('+secs+',"'+elem+'")',1000);
-}

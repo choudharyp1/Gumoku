@@ -2,43 +2,22 @@ html,body{
     background: url("./paper-backgrounds.jpg");
 }
 
-body{
-    position:fixed;
-    overflow-x:scroll;
+a {
+    text-decoration: none;
+    color: black;
 }
-
 h1{
     position: relative;
-    font-family: Papyrus;
+    text-align: center;
+    font-family: Papyrus, fantasy;
     color: black;
-    left: 400px;
 }
-
-.bluebg{
-    background: blue;
-}
-
-.greenbg{
-    background: green;
-}
-
-.yellowbg{
-    background: yellow;
-}
-
-.redbg{
-    background: red;
-}
-
 #layout{
     position: relative;
+    margin-left: auto;
+    margin-right:auto;
     width: 600px;
     height: 600px;
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 50px;
-    left: 400px;
 }
 #gomoku{
     text-align: center;
@@ -48,13 +27,14 @@ h1{
     height: 100%;
 }
 #gomoku td{
-	border: 2px solid black;
-    length: 80px;
-    width: 25px;
+    border: 2px solid black;
+    height: 25px !important;
+    width: 25px !important;
+
 }
 
 #gomoku tr{
-	border: 2px solid black;
+    border: 2px solid black;
 }
 
 #variation{
@@ -82,32 +62,19 @@ button:active{
 .buttons{
     position: relative;
     width: 500px;
-    top: -400px;
-    left: 150px;
-    display: inline-block;
+    margin-left:auto;
+    margin-right:auto;
 }
 
 .buttons button{
         position: relative;
         text-align: center;
-        margin-top: 50px;
+        margin-top: 30px;
         width: 40%;
         height: 1%;
         background-color: #ce8483;
-        font-family: Papyrus;
+        font-family: Papyrus, fantasy;
         font-size: 200%;
-}
-#stop{
-    margin-left: 10px;
-}
-#start{
-    margin-right: 10px;
-}
-
-.status{
-    position: relative;
-    left: 1550px;
-    top: -460px;
 }
 
 .clickables{
@@ -115,9 +82,16 @@ button:active{
 }
 
 .addimage{
-    text-color: white;
-    background-size: 85% 85%;
+    color: white;
+    background-size: 80%;
     background-image: url("./black.png");
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.botimage{
+    color: black;
+    background-size: 80%;
+    background-image: url("./white.png");
     background-repeat: no-repeat;
     background-position: center;
 }

@@ -8,36 +8,43 @@
     <link rel= "stylesheet" type="text/css" href= "../static/stylesheet.css">
     <script src="../static/script.js"></script>
 
-    <title>Gumoku</title>
+    <title>Toe Tactics</title>
 
 </head>
-
 <body>
-<h1 class="container" style="text-align: center"><b>Gumoku Online</b></h1>
+<!-- <a href='/start'> start </a> -->
+<h1 class="container"><b>Toe Tactics</b></h1>
+<h3 class="container" style="text-align: center"><b>First to make 5 in a row wins!</b></h3>
+<p class="container" style="text-align: center"><b>Play against the AI</b></p>
 <div id="layout">
-    <table id="gomoku">
-        {% for x in range(0, 15) %}
+    <table align="center" id="gomoku">
+        {% for x in range(0, 14) %}
         <tr>
-        {% for y in range(0, 15) %}
-            <td id="{{ y }}-{{ x }}" onclick="play({{ y }}, {{ x }})";>1</td>
+        {% for y in range(0, 14) %}
+        {% if board[x*15 + y] == 0 and wait == 1 %}
+            <td id="{{x*15 + y}}";> </td>
+        {% elif board[x*15 + y] == 2 %}
+            <td id="lol" class='addimage';>&nbsp;</td>
+        {% elif board[x*15 + y] == 1 %}
+            <td id="lol" class='botimage';>&nbsp;</td>
+        {% elif board[x*15 + y] % 2 == 0 and board[x*15 + y] > 1 %}
+            <td id="lol" class='addimage';>{{board[x*15 + y] - 2}}&nbsp;</td>
+        {% elif board[x*15 + y] % 2 == 1 %}
+            <td id="lol" class='botimage';>{{board[x*15 + y] - 2}}&nbsp;</td>
+        {% else %}
+            <td id="lol";> </td>
+        {% endif %}
         {% endfor %}
         </tr>
         {% endfor %}
     </table>
- <button id="variation"><b>Variation</b></button>
 </div>
-
 <div class="buttons">
-    <button id="start"><b>Start Game</b></button>
-    <button id="stop"><b>Stop Game</b></button>
+    <button id="start"><a href="/start">Start Game</a></button>
+    <button id="stop"><a href="/end">Stop Game</a></button>
+    <button id="variation"><a href="/var">Variation</a></button>
+    <button id="devariation"><a href="/unvar">DeVariation</a></button>
 </div>
-<div class="status">
-<div id="countdown"></div>
-</div>
-<script>
-    countDown(10,"countdown");
-</script>
-
 
 </body>
 </html>
