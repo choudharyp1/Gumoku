@@ -4,6 +4,11 @@
 
 $(document).ready(function () {
     $('#gomoku td').click(function () {
-        $(this).addClass('bluebg')
+    	if ($(this).attr('id') != "lol") {
+    		$(this).addClass('botimage')
+	        console.log($(this).attr('id'))
+	        window.location.href='/play/' + $(this).attr('id');
+    	}
+        return false;
     })
 })

@@ -8,22 +8,42 @@
     <link rel= "stylesheet" type="text/css" href= "../static/stylesheet.css">
     <script src="../static/script.js"></script>
 
-    <title>Gumoku</title>
+    <title>Gomoku</title>
 
 </head>
-
+<a href='/start/1' > start </a>
+<a href='/end'> end </a>
 <body>
+<!-- <a href='/start'> start </a> -->
 <h1 class="container" style="text-align: center"><b>Gumoku Online</b></h1>
 <div id="layout">
     <table id="gomoku">
         {% for x in range(0, 14) %}
         <tr>
         {% for y in range(0, 14) %}
-            <td id="{{ y }}-{{ x }}" onclick="play({{ y }}, {{ x }})";>&nbsp;</td>
+        {% if board[x*15 + y] == 0 and wait == 1 %}
+            <td id="{{x*15 + y}}";> </td>
+        {% elif board[x*15 + y] == 2 %}
+            <td id="lol" class='addimage';>&nbsp;</td>
+        {% elif board[x*15 + y] == 1 %}
+            <td id="lol" class='botimage';>&nbsp;</td>
+        {% elif board[x*15 + y] % 2 == 0 and board[x*15 + y] > 1 %}
+            <td id="lol" class='addimage';>{{board[x*15 + y] - 2}}&nbsp;</td>
+        {% elif board[x*15 + y] % 2 == 1 %}
+            <td id="lol" class='botimage';>{{board[x*15 + y] - 2}}&nbsp;</td>
+        {% else %}
+            <td id="lol";> </td>
+        {% endif %}
         {% endfor %}
         </tr>
         {% endfor %}
-    </table></div>
+    </table> </div>
+
+<div class="buttons">
+    <button id="start"><a href="/start/1">Start Game</a></button>
+    <button id="stop"><a href="/end">Stop Game</a></button>
+    <button id="variation"><a href="/var">Variation</a></button><button id="variation"><a href="/unvar">DeVariation</a></button>
+</div>
 
 </body>
 </html>
