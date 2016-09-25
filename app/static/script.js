@@ -4,9 +4,6 @@
 
 $(document).ready(function () {
 
-	$('#stop').hide();
-	$('#devariation').hide();
-
     $('#gomoku td').click(function () {
     	if ($(this).attr('id') != "lol") {
     		$(this).addClass('botimage')
@@ -15,20 +12,4 @@ $(document).ready(function () {
     	}
         return false;
     })
-	$('#start').click(function () {
-		$(this).hide();
-		$('#stop').show();
-	});
-	$('#stop').click(function () {
-		$(this).hide();
-		$('#start').show();
-	});
-	$('#variation').click(function () {
-		$(this).hide();
-		$('devariation').show();
-	});
-	$('#devariation').click(function () {
-		$(this).hide();
-		$('#variation').show();
-	});
 })

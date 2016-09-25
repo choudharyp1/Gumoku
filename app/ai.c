@@ -1694,20 +1694,20 @@ int aiMove(int board[], int player) {
 		// printf("Defending His Win\n");
 		return (urFive->wLine)[0];
 	}
-	// struct Holder *myrFive = TSS(board, player, 4);
-	// if (myrFive->fEval == 1) {
-	// 		// printf("I Win\n");
-	// 		// for (int i = 0; i<10;i++) {
-	// 		// 	printf("Move: %d\n", (myFive->wLine)[i]);
-	// 		// }
-	// 	return (myrFive->wLine)[0];
-	// }
-	// //freeHolder(myFive);
-	// struct Holder *urrFive = TSS(board, op, 4);
-	// if (urrFive->fEval == 1) {
-	// 	// printf("Defending His Win\n");
-	// 	return (urrFive->wLine)[0];
-	// }
+	 struct Holder *myrFive = TSS(board, player, 4);
+	 if (myrFive->fEval == 1) {
+	 		// printf("I Win\n");
+	 		// for (int i = 0; i<10;i++) {
+	 		// 	printf("Move: %d\n", (myFive->wLine)[i]);
+	 		// }
+	 	return (myrFive->wLine)[0];
+	 }
+	 //freeHolder(myFive);
+	 struct Holder *urrFive = TSS(board, op, 4);
+	 if (urrFive->fEval == 1) {
+	 	// printf("Defending His Win\n");
+	 	return (urrFive->wLine)[0];
+	 }
 	//freeHolder(urFive);
 	struct Holder *myWin = TSS(board, player, 3);
 	if (myWin->fEval == 1) {

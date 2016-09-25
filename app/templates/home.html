@@ -15,8 +15,15 @@
 <!-- <a href='/start'> start </a> -->
 <h1 class="container"><b>Toe Tactics</b></h1>
 <h3 class="container" style="text-align: center"><b>First to make 5 in a row wins!</b></h3>
+<h4 class="container" style="text-align: center"> Humans: {{options[3]}}  AI: {{options[4]}}
 <p class="container" style="text-align: center"><b>Play against the AI</b></p>
 <div id="layout">
+    
+	{% if options[2] == 1%}
+	<h2 style="font-family: Papyrus; text-align: center"><b>You won</b></h2>
+	{% elif options[2] == 2 %}
+	<h2 style="font-family: Papyrus; text-align: center"><b>You lost</b></h2>
+	{% endif %}
     <table align="center" id="gomoku">
         {% for x in range(0, 14) %}
         <tr>
@@ -40,10 +47,17 @@
     </table>
 </div>
 <div class="buttons">
-    <button id="start"><a href="/start">Start Game</a></button>
+    {% if options[0] == 0 %}
+    <button id="start"><a href="/start/0">Play First</a></button>
+    <button id="start"><a href="/start/1">Play Second</a></button>
+    {% else %}
     <button id="stop"><a href="/end">Stop Game</a></button>
+    {% endif %}
+    {% if options[1] == 0 %}
     <button id="variation"><a href="/var">Variation</a></button>
+    {% else %}    
     <button id="devariation"><a href="/unvar">DeVariation</a></button>
+    {% endif %}
 </div>
 
 </body>
