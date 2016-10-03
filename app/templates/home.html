@@ -48,15 +48,15 @@
 </div>
 <div class="buttons">
     {% if options[0] == 0 %}
-    <button id="start"><a href="/start/0">Play First</a></button>
-    <button id="start"><a href="/start/1">Play Second</a></button>
+    <button id="start" href="/start/0"><a href="/start/0">Play First</a></button>
+    <button id="start" href="/start/1"><a href="/start/1">Play Second</a></button>
     {% else %}
-    <button id="stop"><a href="/end">Stop Game</a></button>
+    <button id="stop" href="/end"><a href="/end">Stop Game</a></button>
     {% endif %}
     {% if options[1] == 0 %}
-    <button id="variation"><a href="/var">Variation</a></button>
+    <button id="variation" href="/var"><a href="/var">Variation</a></button>
     {% else %}    
-    <button id="devariation"><a href="/unvar">DeVariation</a></button>
+    <button id="devariation" href="/unvar"><a href="/unvar">DeVariation</a></button>
     {% endif %}
 </div>
 

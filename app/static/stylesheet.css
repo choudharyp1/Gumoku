@@ -37,15 +37,6 @@ h1{
     border: 2px solid black;
 }
 
-#variation{
-        text-align: center;
-        margin-top: 50px;
-        width: 40%;
-        height: 9%;
-        background-color: #ce8483;
-        font-family: Papyrus;
-        font-size: 200%;
-}
 
 button:focus{
     outline:0;
@@ -61,20 +52,16 @@ button:active{
 
 .buttons{
     position: relative;
-    width: 500px;
+    width: 600px;
     margin-left:auto;
     margin-right:auto;
+    margin-top: 45px;
+    font-family: Papyrus;
+    font-size: 25px;
 }
 
-.buttons button{
-        position: relative;
-        text-align: center;
-        margin-top: 30px;
-        width: 40%;
-        height: 1%;
-        background-color: #ce8483;
-        font-family: Papyrus, fantasy;
-        font-size: 200%;
+button{
+    background-color: #cc8343
 }
 
 .clickables{
