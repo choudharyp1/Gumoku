@@ -1769,9 +1769,9 @@ int aiMove(int board[], int player) {
 	// printf("HIIII\n");
 	turn ++;
 	if (turn < 3) {
-		return minimax(board, 2, 0, 5, 5, -20000000, 20000000, -1);	
+		return minimax(board, 2, 0, 4, 3, -20000000, 20000000, -1);	
 	} else {
-		return minimax(board, 2, 0, 5, 5, -20000000, 20000000, -1);
+		return minimax(board, 2, 0, 4, 5, -20000000, 20000000, -1);
 	}
 }
 

@@ -1,3 +1,5 @@
+""" main file for the gomoku ai """
+
 from flask import Flask, render_template, redirect
 import time
 import os
@@ -5,14 +7,20 @@ def current_milli_time():
 	return int(round(time.time()))
 wl = open('wl', 'r').read().split(' ')
 app = Flask(__name__)
+# The current board state
 board = [0]*225
+# are we waiting for the AI to move
 wait = 0
-options = [0, 0, 0, int(wl[0]), int(wl[1])] # started? variation_mode?
+#         started, variation mode, game run, human_wins, AI wins
+options = [0, 0, 0, int(wl[0]), int(wl[1])] 
+# current variation
 variation = []
+# current board evaluation by computer
 evaluation = 0
 from sandbox import get_sandbox
 
 def increment(w, l):
+	""" increments the counters for humans and AIs """
 	global options
 	options[3] += w
 	options[4] += l
@@ -23,6 +31,7 @@ bot = get_sandbox(cwd)
 @app.route('/')
 @app.route('/home/')
 def home():
+	""" renders the home page """
 	global board
 	global wait
 	global options
@@ -32,6 +41,7 @@ def home():
 
 @app.route('/var', methods=['GET'])
 def variation():
+	""" displays the variation the AI is thinking """
 	global variation
 	global board
 	global wait
@@ -45,6 +55,7 @@ def variation():
 
 @app.route('/unvar', methods=['GET'])
 def unvariation():
+	""" removes the displayed variations """
 	global variation
 	global board
 	global wait
@@ -60,6 +71,7 @@ def unvariation():
 
 @app.route('/start/<int:start>', methods=['POST', 'GET'])
 def start_game(start):
+	""" start a game """
 	global bot
 	global variation
 	global board
@@ -137,4 +149,4 @@ def end_game():
 	return render_template('home.html', wait=wait, board=board, evaluation=evaluation, variation=variation, options=options)
 
 if __name__ == '__main__':
-	app.run(host='0.0.0.0', port=28001);
+	app.run(host='0.0.0.0', port=5000);
